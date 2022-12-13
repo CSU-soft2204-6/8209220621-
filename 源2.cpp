@@ -27,6 +27,10 @@ public:
 	{
 		return Complex(A.real + 1, A.image);
 	}
+	friend Complex operator ++(Complex& A, int a)
+	{
+		return Complex(A.real++, A.image);
+	}
 };
 int main()
 {
