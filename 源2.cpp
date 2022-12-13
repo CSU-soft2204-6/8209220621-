@@ -23,25 +23,38 @@ public:
 	{
 		return Complex(A.real + B.real, A.image + B.image);
 	}
-	friend Complex operator ++(Complex A)
+	friend Complex operator ++(Complex& A)
 	{
-		return Complex(A.real + 1, A.image);
+		return Complex(A.real++, A.image);
 	}
 	friend Complex operator ++(Complex& A, int a)
 	{
 		return Complex(A.real++, A.image);
+	}
+	Complex operator -(Complex B)
+	{
+		return Complex(this->real - B.real, this->image - B.image);
+	}
+	Complex operator --()
+	{
+		return Complex(this->real - 1, this->image);
+	}
+	Complex operator --(int)
+	{
+		return Complex(this->real - 1, this->image);
 	}
 };
 int main()
 {
 	Complex c1(5.4, 1.1);
 	Complex c2(5.8, -1.9);
-	Complex c3=c1+c2;
+	Complex c3 = c1 + c2;
 	c1.display();
 	c2.display();
 	c3.display();
 	c3++;
 	c3.display();
+	c1--.display();
 	system("pause");
 	return 0;
 }
