@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-/*template<class T>
+template<class T>
 class Stack
 {
 private:
@@ -61,7 +61,7 @@ int main()
 
 }
 
-template<class T_ID, class T_Score, int num>
+/*template<class T_ID, class T_Score, int num>
 class Student {
 private:
 	T_ID Student[num];
